@@ -41,7 +41,7 @@
         </div>
     </form>
     <h3 class="mt-1">Send with Post & Ajax</h3>
-    <form action="getname.php" method="get" class="d-flex" id="Post_submit">
+    <form  method="get" class="d-flex" id="Post_submit">
         <div class="w-75">
             <input type="text" name="name" id="name1" placeholder="Name" class=" d-inline-block form-control   ">
         </div>
@@ -77,10 +77,10 @@ document.getElementById('Post_submit').addEventListener('submit', function(e){
 e.preventDefault();
 const name = e.target.name.value;
 var params = 'name=' + name ;
-xhr.open('POST', 'getname.php', true);
+xhr.open('POST', 'process.php', true);
 xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 xhr.onload = function(){
-document.getElementById('demo').innerText = this.responseText;
+// document.getElementById('demo').innerText = this.responseText;
 }; 
 
 xhr.send(params);
@@ -95,6 +95,7 @@ xhr.open('Get', 'getAllUsers.php', true);
 
 xhr.onload = function(){
     const users = JSON.parse(this.responseText);
+    document.getElementById('demo').innerHTML ='';
     users.forEach(user => {
         
         document.getElementById('demo').innerHTML +=`<p>${user.id +". " + user.name}</p>`;
