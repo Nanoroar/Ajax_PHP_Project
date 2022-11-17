@@ -1,0 +1,51 @@
+body {
+    height: 100vh;
+}
+
+header {
+    color: aliceblue;
+    background-color: #ffe01b;
+}
+
+h1 {
+    text-shadow: 0px 1px 2px black;
+}
+
+.hide {
+    display: none;
+}
+
+.circle {
+    border-radius: 50%;
+    min-width: 40px;
+    min-height: 40px;
+    line-height: 1rem;
+    font-weight: bold;
+}
+
+.circle:hover {
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, .5);
+    transform: translateY(2px);
+    color: #ffe01b !important;
+    background-color: #198754;
+}
+
+
+/* h1:hover {
+    text-shadow: 0px 0px 10px rgb(15, 230, 51);
+    color: black !important;
+    transform: translateY(5px);
+} */
+
+footer {
+    background-color: #ffe01b;
+}
+
+section {
+    height: auto;
+}
+
+iframe {
+    height: 500px;
+}

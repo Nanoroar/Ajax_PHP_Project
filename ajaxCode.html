@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <title>Code example</title>
+    <style>
+.comment{
+    color: rgb(5, 138, 5);
+    font-weight: 900;
+    font-size: medium;
+}
+
+    </style>
+</head>
+
+<body>
+    <div id="demo">
+        
+    </div>
+<pre class="fs-5">
+<span class="text-success h6 fw-bold">// Create XHR Object</span> 
+<span class="text-primary fs-5">var <span class="text-danger">xhr </span>= new XMLHttpRequest();</span>
+
+<span class="text-primary">function</span> getText() {
+    console.log('clicked');
+
+<span class="comment">//Open - request method , url/file, async?</span>
+<span class="text-danger">xhr</span>.<span class="text-primary">open</span>(<span class="text-danger">'Get', 'sample.txt', true</span>);
+
+<span class="text-danger">xhr</span>.<span class="text-primary">onreadystatechange</span> = function () {
+    if (<span class="text-danger">this.readyState</span> == 4 && this.status == 200) {
+           
+            console.log(this.responseText);
+         } else {
+              //some code to run
+        }
+    };
+
+<span class="text-danger">xhr</span>.<span class="text-primary">send</span>();
+
+}
+</pre>
+
+<script>
+const demo = document.getElementById('demo');
+var xhr = new XMLHttpRequest();
+xhr.open('GET', 'sample.txt', true);
+console.log('ReadyState: ' + xhr.readyState);
+
+//Optional  - used for loaders
+xhr.onprogress = function(){
+console.log('onprogress: ' + xhr.readyState);
+demo.innerText ='loading...';
+};
+xhr.onreadystatechange = function() {
+    console.log('ReadyState: ' + xhr.readyState);
+    if(this.readyState == 4 && this.status == 200){
+        console.log(this.responseText);
+    }
+};
+
+xhr.send();
+</script>
+</body>
+
+</html>

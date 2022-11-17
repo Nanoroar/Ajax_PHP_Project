@@ -1,0 +1,2 @@
+Hello form Sample Text,<br>
+This text is printed on the screen by using <strong>XMLHttpRequest</strong>.
